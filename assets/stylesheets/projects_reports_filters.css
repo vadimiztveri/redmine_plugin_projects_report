@@ -1,0 +1,89 @@
+.projects_reports_filter {
+  position: absolute;
+  top: 33px;
+  left: 0;
+
+  font-weight: normal;
+  background: #fff;
+
+  z-index: 300;
+}
+
+.projects_reports_filter.opened {
+  border: 1px solid #ccc;
+  width: 240px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.projects_reports_filter.closed {
+  border: 1px solid #fff;
+  width: 80px;
+  box-shadow: none;
+}
+
+.projects_reports_filter .filter-wrapper {
+  overflow: hidden;
+}
+
+.projects_reports_filter.closed .filter-wrapper {
+  height: 0;
+}
+
+.projects_reports_filter .header {
+  font-size: 85%;
+  margin: 4px 9px 7px 9px;
+}
+
+.projects_reports_filter .cross {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 20px;
+  height: 30px;
+  text-align: right;
+  font-size: 150%;
+  cursor: pointer;
+}
+
+.projects_reports_filter.closed .cross {
+  color: #fff;
+}
+
+.projects_reports_filter.opened .cross {
+  color: #ccc;
+}
+
+.projects_reports_filter .list {
+  margin: 0 9px;
+}
+
+.projects_reports_filter .submit {
+  margin: 7px 9px;
+}
+
+.projects_reports_filter .header span {
+  border-bottom: 1px dashed #ccc;
+  cursor: pointer;
+}
+
+.projects_reports_filter .list ul {
+  margin: 0 9px;
+  padding: 0;
+}
+
+.projects_reports_filter .list ul li {
+  list-style-type: none;
+  margin-left: -12px;
+}
+
+.projects_reports_filter .list ul li label {
+  cursor: pointer;
+}
+
+.projects_reports_filter .list ul li label:hover {
+  background: #eee;
+}
+
+.projects_reports_filter .list ul li.box_all {
+  margin-bottom: 3px;
+}

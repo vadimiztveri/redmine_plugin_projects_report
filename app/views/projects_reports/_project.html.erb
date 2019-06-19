@@ -1,0 +1,52 @@
+  <td class="left project" width='10%' rowspan=<%= project_data[:versions_count] %> >
+    <%= project_data[:name_with_link] %>
+  </td>
+
+  <% versions_header = project_data[:versions_header] %>
+
+  <td class="left drop-bottom" dropforid='<%= project_id %>' width='30%' title='Развернуть'>
+    <dev class='drop-down-arrow' dropforid='<%= project_id %>'></dev>
+  </td>
+
+  <td class="right drop-bottom" dropforid='<%= project_id %>' width='8%' title='Развернуть'>
+    <strong class='<%= versions_header[:color] %> header percent-bottom' dropforid='<%= project_id %>'>
+      <%= versions_header[:percent] -%>%
+    </strong>
+  </td>
+
+  <% events = project_data[:versions_header][:events] %>
+  <% @events.each do |event| %>
+    <td class='full center <%= events[event.id][:color] %>' width='<%= width %>'>
+      <span class='td-content header' >
+        <%= events[event.id][:issues] %>
+      </span>
+    </td>
+  <% end %>
+</tr>
+
+<% versions = project_data[:versions] %>
+<% versions.each do |version| %>
+  <td class="left dropble hide" width='26%' dataprojectid='<%= project_id %>'>
+    <span class='td-content'>
+      <%= version[:name] %>
+    </span>
+  </td>
+
+  <td class="right dropble hide" width='12%' dataprojectid='<%= project_id %>'>
+    <span class='td-content'>
+      <strong class='<%= version[:color] %>'>
+        <%= "#{version[:percent]}%" %>
+      </strong>
+    </span>
+  </td>
+
+  <% events = version[:events] %>
+  <% @events.each do |event| %>
+    <td class="full center <%= version[:events][event.id][:color] %> dropble hide" width='<%= width %>' dataprojectid='<%= project_id %>'>
+      <span class='td-content' >
+        <%= events[event.id][:issues] %>
+      </span>
+    </td>
+  <% end %>
+</tr>
+<% end %>

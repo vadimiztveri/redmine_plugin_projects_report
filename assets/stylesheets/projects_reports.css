@@ -1,0 +1,260 @@
+.selected {
+  display: block;
+}
+
+.selected.hide {
+  display: none;
+}
+
+#main {
+  padding: 0;
+}
+
+#main-menu ul {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#content {
+  margin-right: 0;
+}
+
+#wrapper{
+  overflow: inherit;
+  width: 100%;
+}
+
+@media (max-width: 899px) {
+  #wrapper {
+    overflow: hidden;
+  }
+}
+
+.flyout-menu {
+  z-index: 200;
+}
+
+.projects_reports_wrapper {
+  position: relative;
+  min-width: 800px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+@media (max-width: 899px) {
+  .projects_reports_wrapper {
+    overflow: auto;
+    max-height: 99vh;
+  }
+}
+
+.projects-reports {
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 2px solid #999;
+}
+
+.projects-reports thead th.first-row {
+  position: sticky;
+  background: #fff;
+  z-index: 100;
+  top: -1px;
+  min-width: 100px;
+  min-height: 102px;
+}
+
+.projects-reports thead th.first-row:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0px;
+  height: 2px;
+  background-color: #fff;
+  transition: background-color 0.1s ease-out;
+}
+
+.projects-reports thead th.first-row.show:after {
+  background-color: #999;
+}
+
+@media (max-width: 899px) {
+  .projects-reports thead th {
+    top: 48px;
+  }
+}
+
+.projects-reports .thick_line {
+  border-top: 2px solid #999;
+}
+
+.projects-reports th {
+  border-left: 1px solid #ccc;
+  padding: 12px 10px 0 10px;
+  vertical-align: top;
+}
+
+.projects-reports td {
+  border-left: 1px solid #ccc;
+  padding: 10px;
+  vertical-align: top;
+}
+
+.projects-reports th.version {
+  white-space: pre-wrap;
+}
+
+.projects-reports thead th.total {
+  font-size: 125%;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 10px 10px 10px;
+  border-top: 1px solid #ccc;
+}
+
+.projects-reports thead th.total.percent {
+  text-align: right;
+}
+
+.projects-reports td.project {
+  border-left: 2px solid #999;
+}
+
+.projects-reports td.drop-bottom {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.projects-reports a:visited,
+.projects-reports a {
+  color: #3d454c;
+}
+
+.projects-reports td .header a {
+  color: #3d454c;
+}
+
+.projects-reports td .header a:hover {
+  color: #fff;
+}
+
+.projects-reports a:hover {
+  color: #2996cc;
+}
+
+.projects-reports .first {
+  border-left: none;
+  white-space: nowrap;
+}
+
+.projects-reports .full {
+  position: relative;
+}
+
+.projects-reports .full a {
+  padding: 0.5em 1em;
+}
+
+.projects-reports .full a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.projects-reports .left {
+  text-align: left;
+}
+
+.projects-reports .right {
+  text-align: right;
+}
+
+.projects-reports .center {
+  text-align: center;
+}
+
+.projects-reports td.yellow {
+  background: #F9A01A;
+}
+
+.projects-reports td.green {
+  background: #5FAF3C;
+}
+
+.projects-reports td.red {
+  background: #cf584b;
+}
+
+.projects-reports strong.yellow {
+  color: #F9A01A;
+}
+
+.projects-reports strong.green {
+  color: #5FAF3C;
+}
+
+.projects-reports strong.red {
+  color: #cf584b;
+}
+
+.projects-reports .drop-down-arrow {
+  position: relative;
+  float: right;
+  top: 3px;
+  right: 2px;
+  width: 16px;
+  height: 16px;
+
+  background-image: url(/images/sort_desc.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  transform: rotate(180deg);
+  transition: transform 0.1s ease-out;
+
+  cursor: pointer;
+}
+
+.projects-reports .drop-down-arrow.opened {
+  transform: rotate(0deg);
+}
+
+.projects-reports .dropble {
+  font-size: 85%;
+  height: 19px;
+  transition: height 0.1s ease-out;
+  border-top: 1px solid #ccc;
+}
+
+.projects-reports .dropble.hide {
+  height: 0;
+  padding: 0;
+  border-top: none;
+}
+
+.projects-reports .dropble.hide .td-content {
+  display: none;
+}
+
+.projects-reports .header {
+  font-size: 120%;
+  font-weight: bold;
+}
+
+.dropble-all {
+  position: absolute;
+  right: 0;
+  top: 38px;
+  width: 200px;
+  text-align: right;
+}
+
+.dropble-all a {
+  color: #2996cc;
+  cursor: pointer;
+}

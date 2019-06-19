@@ -1,0 +1,16 @@
+ru:
+  label_projects_reports: 'Отчеты'
+  projects_reports:
+    empty: 'Нет проектов по данному запросу.'
+    get: 'Применить'
+    leader: 'Зампред'
+    project: 'Ведомство'
+    version: 'Проблематика'
+    filter: 'Выбрать'
+    no_leader: 'Проекты без зампреда'
+    choose_all: 'Выбрать все'
+    progress: 'Готовность'
+
+    title:
+      some: "Есть задачи со статусом %{status_names}"
+      green: 'Все задачи закрыты'

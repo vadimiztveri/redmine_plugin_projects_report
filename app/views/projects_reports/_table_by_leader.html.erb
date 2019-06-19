@@ -1,0 +1,36 @@
+<% if @projects.empty? %>
+  <p><%= t('projects_reports.empty') %></p>
+<% else %>
+  <div class='dropble-all' id='dropbleAll'>
+    <a>Развернуть все</a>
+  </div>
+
+  <table class="projects-reports" id='projects-reports'>
+    <% width = "#{42 / @events.size}%" %>
+    <%= form_tag(path, method: :get) do |f| %>
+      <%= render partial: "table_header", :locals => { filter: @filter, events: @events, width: width, by: :leaders, totals: totals } %>
+    <% end %>
+
+    <tbody>
+      <% projects.each do |leader_name, projects_data| %>
+        <tr class='thick_line'>
+          <% versions_counts_sum = projects_data.map{ |project_data| project_data[:versions_count] }.sum %>
+
+          <td class="left first" width='10%' rowspan=<%= versions_counts_sum %> >
+            <%= leader_name %>
+          </td>
+
+          <% projects_data.each_with_index do |progect_data, index| %>
+            <% if index > 0 %>
+              <tr class='thick_line'>
+            <% end %>
+            <% project_id = progect_data[:project_id] %>
+
+            <%= render partial: "project", :locals => { project_data: @projects_with_counts[project_id], project_id: project_id, width: width } %>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+

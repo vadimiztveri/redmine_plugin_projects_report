@@ -1,0 +1,209 @@
+<div style="padding: 10px;">
+  <table class="plugin_settings" style="width: 100%;">
+    <tbody>
+      <tr class="as-settings-group">
+        <th>
+          Основные
+        </th>
+        <th></th>
+      </tr>
+
+      <tr class="as-settings-group">
+        <td>
+          Включен
+        </td>
+        <td>
+          <%= check_box_tag 'settings[enabled]',
+            value = "yes",
+            checked = @settings[:enabled],
+            class: 'settings_parameter-checkbox',
+            id: 'settings_parameter-checkbox' %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          URI родительсвкого проекта
+        </td>
+        <td>
+          <%= text_field_tag 'settings[parent_slug]',
+            Setting.plugin_projects_reports[:parent_slug],
+            :value => @settings[:parent_slug],
+            class: 'settings_parameter-input'
+          %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          ID настраиваемого поля Зампред
+        </td>
+        <td>
+          <%= text_field_tag 'settings[leader_id]',
+            Setting.plugin_projects_reports[:leader_id],
+            :value => @settings[:leader_id],
+            class: 'settings_parameter-input'
+          %>
+        </td>
+      </tr>
+
+      <tr class="as-settings-group">
+        <th>
+          Настраиваемые поля
+        </th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <td>
+          ID настраиваемого поля Мероприятия «Быстро решаем»
+        </td>
+        <td>
+          <%= text_field_tag 'settings[events_quickly_decide_id]',
+            Setting.plugin_projects_reports[:events_quickly_decide_id],
+            :value => @settings[:events_quickly_decide_id],
+            class: 'settings_parameter-input'
+          %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          ID трекера «Быстро решаем»
+        </td>
+        <td>
+          <%= text_field_tag 'settings[trecker_quickly_decide_id]',
+            Setting.plugin_projects_reports[:trecker_quickly_decide_id],
+            :value => @settings[:trecker_quickly_decide_id],
+            class: 'settings_parameter-input'
+          %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          ID настраиваемого поля Мероприятия «Не допускаем»
+        </td>
+        <td>
+          <%= text_field_tag 'settings[events_not_allow_id]',
+            Setting.plugin_projects_reports[:events_not_allow_id],
+            :value => @settings[:events_not_allow_id],
+            class: 'settings_parameter-input'
+          %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          ID трекера «Не допускаем»
+        </td>
+        <td>
+          <%= text_field_tag 'settings[trecker_not_allow_id]',
+            Setting.plugin_projects_reports[:trecker_not_allow_id],
+            :value => @settings[:trecker_not_allow_id],
+            class: 'settings_parameter-input'
+          %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          ID настраиваемого поля Мероприятия «Все знаем»
+        </td>
+        <td>
+          <%= text_field_tag 'settings[events_all_know_id]',
+            Setting.plugin_projects_reports[:events_all_know_id],
+            :value => @settings[:events_all_know_id],
+            class: 'settings_parameter-input'
+          %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          ID трекера «Все знаем»
+        </td>
+        <td>
+          <%= text_field_tag 'settings[trecker_all_know_id]',
+            Setting.plugin_projects_reports[:trecker_all_know_id],
+            :value => @settings[:trecker_all_know_id],
+            class: 'settings_parameter-input'
+          %>
+        </td>
+      </tr>
+
+      <tr class="as-settings-group">
+        <th>
+          Статусы задач
+        </th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <td>
+          ID статуса задачи «Новая»
+        </td>
+        <td>
+          <%= text_field_tag 'settings[status_new_id]',
+            Setting.plugin_projects_reports[:status_new_id],
+            :value => @settings[:status_new_id],
+            class: 'settings_parameter-input'
+          %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          ID статуса задачи «Решена»
+        </td>
+        <td>
+          <%= text_field_tag 'settings[status_complete_id]',
+            Setting.plugin_projects_reports[:status_complete_id],
+            :value => @settings[:status_complete_id],
+            class: 'settings_parameter-input'
+          %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          ID статуса задачи «В работе»
+        </td>
+        <td>
+          <%= text_field_tag 'settings[status_in_work_id]',
+            Setting.plugin_projects_reports[:status_in_work_id],
+            :value => @settings[:status_in_work_id],
+            class: 'settings_parameter-input'
+          %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          ID статуса задачи «Возвращена на доработку»
+        </td>
+        <td>
+          <%= text_field_tag 'settings[status_returned_id]',
+            Setting.plugin_projects_reports[:status_returned_id],
+            :value => @settings[:status_returned_id],
+            class: 'settings_parameter-input'
+          %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          ID статуса задачи «Закрыта»
+        </td>
+        <td>
+          <%= text_field_tag 'settings[status_closed_id]',
+            Setting.plugin_projects_reports[:status_closed_id],
+            :value => @settings[:status_closed_id],
+            class: 'settings_parameter-input'
+          %>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

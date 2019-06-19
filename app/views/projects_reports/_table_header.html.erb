@@ -1,0 +1,53 @@
+<thead id='sticky'>
+  <tr>
+    <th class="left first first-row" width='10%' style="z-index: 102">
+      <%= t('projects_reports.leader') %>
+
+      <div class='projects_reports_filter closed'>
+        <%= render partial: "filter", :locals => { options: filter[:leaders], type: 'leader', check_all: filter[:leaders_all] } %>
+      </div>
+
+      <div class='projects_reports_sorting <%= 'disable' if by == :percent %>' datatype='by_leaders' title='Сортировать по зампредам'></div>
+    </td>
+
+    <th class="left project first-row" width='10%' style="z-index: 101">
+      <%= t('projects_reports.project') %>
+
+      <div class='projects_reports_filter closed'>
+        <%= render partial: "filter", :locals => { options: filter[:projects], type: 'project', check_all: filter[:projects_all] } %>
+      </div>
+    </td>
+
+    <th class="left first-row" width='26%'>
+      <%= t('projects_reports.version') %>
+    </th>
+
+    <th class="left first-row" width='12%'>
+      <%= t('projects_reports.progress') %>
+      <div class='projects_reports_sorting progress asc <%= 'disable' if by == :leaders %>' datatype='by_progress' title='Сортировать по готовности'></div>
+    </td>
+
+    <% events.each do |event| %>
+      <th class="left version first-row" width='<%= width %>'><%= event.name %></td>
+    <% end %>
+  </tr>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+
+    <th class='total percent second-row'>
+      <strong class='<%= totals[:total_color] %>'>
+        <%= "Итог: #{totals[:total_percent]}%" %>
+      </strong>
+    </th>
+
+    <% events.each do |event| %>
+      <th class='total second-row'>
+        <%= totals[:total_versions][event.id][:closed_versions_sum] %>
+        /
+        <%= totals[:total_versions][event.id][:versions_sum] %>
+      </th>
+    <% end %>
+  </tr>
+</thead>

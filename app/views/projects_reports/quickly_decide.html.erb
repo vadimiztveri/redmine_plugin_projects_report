@@ -1,0 +1,24 @@
+<%= render partial: "projects_reports_css" %>
+
+<div class='projects_reports_wrapper'>
+  <div class='projects_reports_bottoms'>
+    <div class='bottom all_know'><a href='/projects_reports/all_know'>I. Все знаем</a></div>
+    <div class='bottom quickly_decide active'>II. Быстро решаем</div>
+    <div class='bottom not_allow'><a href='/projects_reports/not_allow'>III. Не допускаем</a></div>
+  </div>
+
+  <div id='by_leaders' class='selected'>
+    <%= render partial: "table_by_leader", :locals => { projects_with_counts: @projects_with_counts, projects: @projects_sorting_by[:leaders], path: projects_reports_not_allow_path(), totals: @totals } %>
+  </div>
+
+  <div id='by_percent_desc' class='selected hide'>
+    <%= render partial: "table_by_percent", :locals => { projects_with_counts: @projects_with_counts, projects: @projects_sorting_by[:percent_desc], path: projects_reports_not_allow_path(), totals: @totals } %>
+  </div>
+
+  <div id='by_percent_asc' class='selected hide'>
+    <%= render partial: "table_by_percent", :locals => { projects_with_counts: @projects_with_counts, projects: @projects_sorting_by[:percent_asc], path: projects_reports_not_allow_path(), totals: @totals } %>
+  </div>
+
+</div>
+
+<%= render partial: "projects_reports_js" %>

@@ -1,0 +1,30 @@
+<div class='header'>
+  <span class='filterHeader'>
+    <%= t("projects_reports.filter") %>
+  </span>
+
+  <div class='cross'>×</div>
+</div>
+
+<div class='filter-wrapper' id='filter-wrapper'>
+  <div class='list'>
+    <ul>
+      <li class='box_all'>
+        <label>
+          <%= check_box_tag "all", 'yes', check_all, class: 'checkBoxAll' %>
+          <%= t('projects_reports.choose_all') %>
+        </label>
+      </li>
+
+      <% options.each do |option| %>
+        <li>
+          <label>
+            <%= check_box_tag "#{type}[][#{option[:id]}]", 'yes', option[:checked], class: 'list_item' %>
+            <%= option[:name] %>
+          </label>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <%= submit_tag t('projects_reports.get'), class: 'submit' %>
+</div>
